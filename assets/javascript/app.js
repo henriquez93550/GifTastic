@@ -1,10 +1,10 @@
 // Funtion for populating buttons
 $(function() {
     populateButtons(searchArray, 'searchButton', '#buttonsArea');
-    console.log("Page");
+    //console.log("Page");
 })
 
-var searchArray = ['Dog', 'Cat', 'Bird'];
+var searchArray = ['Cat', 'Bird', 'Pokemon', 'Dragon', 'Ferret', 'Raptor'];
 
 function populateButtons(searchArray, classToAdd, areaToAddTo) {
     //Empties out button to not create duplicates
@@ -33,6 +33,7 @@ $(document).on('click', '.searchButton', function() {
                 var rating = response.data[i].rating;
                 var p = $('<p>').text('Rating: ' + rating);
                 //variables for animated and still version of GIF
+                //getting it from JSON object
                 var animated = response.data[i].images.fixed_height.url;
                 var still = response.data[i].images.fixed_height_still.url;
                 //adding image tag
@@ -45,9 +46,9 @@ $(document).on('click', '.searchButton', function() {
                 //adding class to image
                 image.addClass('searchImage');
                 //adding to seach DIV
-                searchDiv.append(p);
-                searchDiv.append(image);
-                $('#searches').append(searchDiv);
+                searchDiv.prepend(p);
+                searchDiv.prepend(image);
+                $('#searches').prepend(searchDiv);
 
             }
         })
