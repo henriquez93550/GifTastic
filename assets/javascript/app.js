@@ -24,14 +24,14 @@ $(document).on('click', '.searchButton', function() {
     //console.log(type);
 
     //Getting API objects
-    var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + type + '&api_key=lBMpoai87PhIFtlIkDjpEFl4XiLJY75q';
+    var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + type + '&api_key=lBMpoai87PhIFtlIkDjpEFl4XiLJY75q&limit=5';
     $.ajax({url: queryURL, method: 'GET'})
         .done(function(response) {
             //console.log(response);
             for(var i=0;i<response.data.length; i++) {
                 var searchDiv = $('<div class="search-item">');
                 var rating = response.data[i].rating;
-                var p = $('<p>').text('Rating: ' + rating);
+                var p = $('<div>').text('Rating: ' + rating);
                 //variables for animated and still version of GIF
                 //getting it from JSON object
                 var animated = response.data[i].images.fixed_height.url;

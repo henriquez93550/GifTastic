@@ -43,6 +43,18 @@ button {
     box-shadow: 15px 15px 15px black;
     transition: box-shadow 1s, transform 1s;
 }
+img {
+    height: 95px;
+    width: 95px;
+    float: left;
+    margin: 3px;
+}
+.grid {
+    width: 700px;
+    height: 600px;
+    padding: 10px 50px 50px 50px;
+    background-color: blanchedalmond;
+}
       
 
 
