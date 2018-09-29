@@ -1,7 +1,7 @@
 // Funtion for populating buttons
 $(function() {
     populateButtons(searchArray, 'searchButton', '#buttonsArea');
-    //console.log("Page");
+    console.log("Page");
 })
 
 var searchArray = ['Cat', 'Bird', 'Pokemon', 'Dragon', 'Ferret', 'Raptor'];
@@ -46,9 +46,9 @@ $(document).on('click', '.searchButton', function() {
                 //adding class to image
                 image.addClass('searchImage');
                 //adding to seach DIV
-                searchDiv.prepend(p);
-                searchDiv.prepend(image);
-                $('#searches').prepend(searchDiv);
+                searchDiv.append(p);
+                searchDiv.append(image);
+                $('#searches').append(searchDiv);
 
             }
         })
